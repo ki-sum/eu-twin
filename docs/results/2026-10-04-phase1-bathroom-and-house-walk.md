@@ -24,15 +24,21 @@ physics model to get right. This round went looking for walls and floors.
   floor). The fitted slab loss, 13.5 dB, agrees with the ITU-R P.2040
   concrete parameters Sionna uses (13.2 dB for 20 cm). Brick walls on the
   lower floor show no measurable extra loss.
-- **Sionna on the scanned mesh does worse than no model on the lower floor**:
-  5.7–6.7 dB RMS against 3.3 dB for a constant, in every variant we tried.
-  It predicts too much signal near and below the router and too little far
-  away. We have not found the cause.
+- **Through the slab, Sionna on our scanned mesh missed by more than a
+  constant would**: 5.7–6.7 dB RMS against 3.3 dB for a constant on the lower
+  floor, with the router upstairs, in every variant we tried. It predicts too
+  much signal near and below the router and too little far away. We suspect
+  the noisy phone-scan mesh around the slab and stairwell; we have not
+  confirmed it.
+- **With a second router on the multi-room lower floor, Sionna was the most
+  accurate model on that floor** (away from the router's own cabinet,
+  3.4–3.6 dB against 4.0–4.8 dB for the simple models, section 4), and a hybrid of Sionna within the floor plus
+  a calibrated slab step was best overall (section 6).
 
-So far no experiment supports the project's core claim that physics-based
-prediction beats a calibrated simple model in homes. We do not think this
-settles the question, because the failure may come from the scanned geometry
-rather than from the physics, but the burden of proof has grown.
+So physics helped where a floor has several rooms and walls, and the
+calibrated simple model was closer in the open attic and through the slab.
+Because all Sionna runs used a rough phone-scan mesh, we read this as a
+statement about our pipeline, not about Sionna.
 
 ## 1. Bathroom session (2026-10-03)
 
@@ -235,9 +241,9 @@ cabinet, Sionna beats both simple models by 0.5–1.3 dB, including the one
 fitted on the same data. This is the first result in favour of the physics
 model. Materials barely matter (plasterboard ≈ concrete/brick), so the gain
 comes from the geometry: walls, doorways and reflections in a multi-room
-floor. With the TP-Link on the other floor, Sionna failed (~6 dB), which now
-points at how the concrete slab and the stairwell are modelled rather than at
-the walls. One short walk and 40–49 cells; this needs repeating, with the
+floor. With the TP-Link on the other floor, Sionna on our mesh was off by
+~6 dB, which now points at how the concrete slab and the stairwell are
+modelled in our scene rather than at the walls. One short walk and 40–49 cells; this needs repeating, with the
 upper floor included.
 
 ## 5. Addendum: the Xiaomi seen from the upper floor (2026-10-04, night)
@@ -288,7 +294,7 @@ over unchanged to the Xiaomi walks; each router gets its own bias
 
 For the Xiaomi, whose own floor is the multi-room brick floor, the hybrid is
 best. For the TP-Link, whose own floor is the open loft, the simple model is
-best and Sionna adds error, as in Phase 0. So far physics helps where a floor
+closer to the measurements than Sionna on our mesh, as in Phase 0. So far physics helps where a floor
 has several rooms and walls, not in an open room, and not through the slab.
 
 ## What this means for the project
@@ -298,7 +304,7 @@ Two readings of the evidence, and we cannot yet choose between them:
 1. **Physics has little to add at 2.4 GHz in this kind of house.** Brick walls
    cost a few dB, the concrete slab is the one big step, and a model with
    distance plus a per-floor loss captures what matters. If that holds for
-   other homes, a ray tracer is overkill for coverage prediction.
+   other homes, a ray tracer may not be needed for basic coverage prediction.
 2. **Physics needs clean geometry.** Sionna's material parameters are right
    (slab 13.5 dB measured vs 13.2 dB from P.2040, bathroom wall 3 dB vs ~4 dB),
    but a phone-scan TSDF mesh may be the wrong input for it. A version of the

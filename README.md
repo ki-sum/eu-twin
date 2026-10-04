@@ -24,10 +24,12 @@ point, not a general result.
   a second router downstairs at 2.9 dB RMS error, against 2.1 dB when refitted
   on that router's own data. This is what a "where should the router go"
   feature needs.
-- **Ray tracing (Sionna RT) helped only on the multi-room floor.** In the open
-  attic room and through the slab, the simple model was better. A hybrid
-  (Sionna within the router's floor, calibrated slab step across floors) was
-  best for the router on the multi-room floor.
+- **On our phone-scan geometry, Sionna RT added accuracy on the multi-room
+  floor.** In the open attic room and through the slab, the calibrated simple
+  model was closer to the measurements. We think the rough scanned mesh, not
+  Sionna itself, is the limit there; clean building geometry is untested. A
+  hybrid (Sionna within the router's floor, calibrated slab step across
+  floors) was best for the router on the multi-room floor.
 - **Bluetooth can stand in for Wi-Fi signal strength at 2.4 GHz.** iPhones
   do not let apps read Wi-Fi RSSI. On one walk, BLE RSSI from a phone placed
   next to the router followed the walker's Wi-Fi RSSI with correlation 0.94

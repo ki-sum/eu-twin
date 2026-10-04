@@ -12,13 +12,12 @@ we have not installed or tested any of these apps.
 
 ## Consumer apps that already suggest router positions
 
-- **WiFi Sage** (iOS, Tap Water Ltd, v1.0 in May 2026, 6 ratings): LiDAR/AR
+- **WiFi Sage** (iOS, v1.0 in May 2026): LiDAR/AR
   scan, "Path Loss Model + Genetic Algorithm AI", recommends router position
   and whether a mesh is needed. $19.99/year or $39.99 lifetime. The store page
   does not say whether the model is fitted to measurements.
   https://apps.apple.com/us/app/wifi-sage-wifi-ar-heat-map/id6763244358
-- **LiDAR WiFi Planner** (iOS, Yu-Chiao Wang, since June 2024, too few
-  ratings to show): LiDAR floor plan, measures throughput/latency (not RSSI,
+- **LiDAR WiFi Planner** (iOS, since June 2024): LiDAR floor plan, measures throughput/latency (not RSSI,
   because iOS hides it), "multi-AP / mesh / extender simulation (FSPL +
   wall-loss model)" and a "Coverage Advisor" that suggests where to add an AP.
   https://apps.apple.com/gb/app/lidar-wifi-planner/id6780439542
@@ -31,9 +30,8 @@ we have not installed or tested any of these apps.
 
 ## Apps that only map measurements (no what-if)
 
-- **WiFi Heatmap & Speed Survey** (iOS, AetherCore LLC): multi-room LiDAR
-  plan, RSSI via iOS Shortcuts, interpolated heatmap, no simulation. 3
-  ratings, one review calls the mapping inaccurate.
+- **WiFi Heatmap & Speed Survey** (iOS): multi-room LiDAR
+  plan, RSSI via iOS Shortcuts, interpolated heatmap, no simulation.
   https://apps.apple.com/us/app/wifi-heatmap-speed-survey/id6761348520
 - **Signl** (iOS): speed and ping per room, optional LiDAR model, no placement
   suggestion. https://www.signlwifi.com/
@@ -123,8 +121,3 @@ positioned readings from one walk, a slab loss learned per house and carried
 over to other router positions, and physics only where a floor has many
 rooms. Whether WiFi Sage or LiDAR WiFi Planner calibrate internally we could
 not tell from their store pages.
-
-The low rating counts (3-6 ratings) suggest these consumer apps have little
-traction so far. That fits the strategy note that the paying customers are
-router OEMs, ISPs and robot vendors, not end users, but we have no data on
-that yet.
