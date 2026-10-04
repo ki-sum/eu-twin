@@ -1,0 +1,11 @@
+# Analysis scripts (Python 3.11+)
+numpy
+scipy
+matplotlib
+pillow
+trimesh
+usd-core        # reads the USDZ scans (pxr)
+
+# Optional, separate environments:
+#   sionna-rt==2.2.0   ray-traced radio maps (sionna_*.py); on CPU it needs an LLVM-C library
+#   open3d==0.20.*     TSDF meshing of walk recordings (stray_tsdf.py), Python 3.11

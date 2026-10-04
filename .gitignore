@@ -1,0 +1,21 @@
+# Wi-Fi credentials and generated configs (contain them)
+sdkconfig
+sdkconfig.secrets
+sdkconfig.secrets.*
+!sdkconfig.secrets.example
+sdkconfig.old
+
+# Build output
+build/
+managed_components/
+android/recorder/.gradle/
+android/recorder/local.properties
+android/recorder/app/build/
+android/recorder/build/
+
+# Python
+__pycache__/
+.venv*/
+
+# Measurements and scans of real homes stay local
+data/
