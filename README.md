@@ -1,7 +1,21 @@
 # EU Twin
 
-Walk through a home once with a phone, mark the router, and get a Wi-Fi
-coverage map, the weak spots, and a better router position.
+AI can already look at images and video and make sense of 3D space. We think
+the next layer is the electromagnetic twin of that space: where the radio
+signal is strong, where it is weak, and why. Home robots will need it to know
+where they stay connected, and people need it to decide where the router
+should go.
+
+This repository is a first step: walk through a home once with a phone,
+record the Wi-Fi signal, and compare the measurements with simple and
+physics-based predictions.
+
+![Replay of one walk over two floors: measured Wi-Fi against four models](docs/media/walk_replay.gif)
+
+*One ten-minute walk over two floors at 12x speed: measured RSSI (black)
+against four models. Router upstairs; each model gets one fitted offset;
+Sionna RT runs on the rough phone-scan mesh. Made with
+`scripts/walk_replay.py`.*
 
 This is an early research project, not a finished app. What is here is the
 measurement setup, the analysis code and the write-ups from the first real
